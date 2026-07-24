@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import { ProductProvider } from "./context/ProductContext";
 import NavBar from "./components/NavBar"
 import Home from "./pages/Home"
+import About from "./pages/About"
 import Login from "./pages/Login"
 import Admin from "./pages/Admin"
 import ProductList from "./pages/ProductList"
@@ -30,6 +31,7 @@ function App() {
         <NavBar isLoggedIn={isLoggedIn} logout={logout}/>
         <Routes>
           <Route path="/" element={<Home />}/>
+          <Route path="/about" element={<About />}/>
           <Route path="products" element={<ProductList/>}>
             <Route path=":id" element={<ProductDetails/>}/>
           </Route>
