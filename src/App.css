@@ -115,6 +115,33 @@
   margin: 0 auto;
 }
 
+/* About */
+
+.about {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.about__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.about__title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about__text {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+}
+
 /* Catalog (product list) */
 
 .catalog {

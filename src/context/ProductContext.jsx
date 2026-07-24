@@ -36,7 +36,8 @@ export function ProductProvider({ children }) {
 
   // Adds product
   function addProduct(product) {
-    fetch(database_file, {
+    setError(null);
+    return fetch(database_file, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(product),
@@ -45,12 +46,14 @@ export function ProductProvider({ children }) {
         if (!response.ok) throw new Error("Could not add product.");
         return response.json();
       })
-      .then((data) => setProducts((prev) => [...prev, data]));
+      .then((data) => setProducts((prev) => [...prev, data]))
+      .catch((error) => setError(error.message));
   }
 
   // Updates product
   function updateProduct(id, changes) {
-    fetch(`${database_file}/${id}`, {
+    setError(null);
+    return fetch(`${database_file}/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(changes),
@@ -61,16 +64,19 @@ export function ProductProvider({ children }) {
       })
       .then((data) =>
         setProducts((prev) => prev.map((p) => (p.id === id ? data : p)))
-      );
+      )
+      .catch((error) => setError(error.message));
   }
 
   // Deletes product
   function deleteProduct(id) {
-    fetch(`${database_file}/${id}`, { method: "DELETE" })
+    setError(null);
+    return fetch(`${database_file}/${id}`, { method: "DELETE" })
       .then((response) => {
         if (!response.ok) throw new Error("Could not delete product.");
         setProducts((prev) => prev.filter((p) => p.id !== id));
-      });
+      })
+      .catch((error) => setError(error.message));
   }
 
   const value = {
