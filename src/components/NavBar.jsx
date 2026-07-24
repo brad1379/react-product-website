@@ -9,12 +9,15 @@ function NavBar({ isLoggedIn, logout }) {
     }
 
     return (
-        <header>
-            <nav>
-                <NavLink to="/">Home</NavLink>
-                <NavLink to="/products">Products</NavLink>
-                {isLoggedIn && <NavLink to="/admin">Admin</NavLink>}
-                {isLoggedIn ? (<button onClick={handleLogout}>Log out</button>) : (<NavLink to="/login">Admin Login</NavLink>)}
+        <header className="nav">
+            <nav className="nav__inner">
+                <NavLink to="/" end className="nav__brand">Home Appliance Depot</NavLink>
+                <div className="nav__links">
+                    <NavLink to="/" end>Home</NavLink>
+                    <NavLink to="/products">Products</NavLink>
+                    {isLoggedIn && <NavLink to="/admin">Admin</NavLink>}
+                    {isLoggedIn ? (<button className="nav__logout" onClick={handleLogout}>Log out</button>) : (<NavLink to="/login">Admin Login</NavLink>)}
+                </div>
             </nav>
         </header>
     )

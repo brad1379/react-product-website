@@ -64,7 +64,9 @@ function Admin() {
                     <input name="category" placeholder="Category" value={newProduct.category} onChange={handleAddChange} required />
                     <input name="image" placeholder="Image URL" value={newProduct.image} onChange={handleAddChange} />
                     <textarea name="description" placeholder="Description" value={newProduct.description} onChange={handleAddChange} />
-                    <button type="submit">Add product</button>
+                    <div className="admin__form-actions">
+                        <button type="submit">Add product</button>
+                    </div>
                 </form>
             </section>
 
@@ -83,8 +85,10 @@ function Admin() {
                                     <input name="category" placeholder="Category" value={editForm.category} onChange={handleEditChange} required />
                                     <input name="image" placeholder="Image URL" value={editForm.image} onChange={handleEditChange} />
                                     <textarea name="description" placeholder="Description" value={editForm.description} onChange={handleEditChange} />
-                                    <button type="submit">Save</button>
-                                    <button type="button" onClick={cancelEdit}>Cancel</button>
+                                    <div className="admin__form-actions">
+                                        <button type="submit">Save</button>
+                                        <button type="button" onClick={cancelEdit}>Cancel</button>
+                                    </div>
                                 </form>
                             </li>
                         ) : (
@@ -92,8 +96,10 @@ function Admin() {
                                 <span className="admin__row-name">{product.name}</span>
                                 <span className="admin__row-category">{product.category}</span>
                                 <span className="admin__row-price">${product.price.toFixed(2)}</span>
-                                <button type="button" onClick={() => startEdit(product)}>Edit</button>
-                                <button type="button" onClick={() => handleDelete(product.id)}>Delete</button>
+                                <div className="admin__row-actions">
+                                    <button type="button" onClick={() => startEdit(product)}>Edit</button>
+                                    <button type="button" onClick={() => handleDelete(product.id)}>Delete</button>
+                                </div>
                             </li>
                         )
                     )}
