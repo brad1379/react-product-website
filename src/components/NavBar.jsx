@@ -13,7 +13,7 @@ function NavBar({ isLoggedIn, logout }) {
             <nav>
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/products">Products</NavLink>
-                {/* <NavLink to="/admin">Admin</NavLink> */}
+                {isLoggedIn && <NavLink to="/admin">Admin</NavLink>}
                 {isLoggedIn ? (<button onClick={handleLogout}>Log out</button>) : (<NavLink to="/login">Admin Login</NavLink>)}
             </nav>
         </header>
