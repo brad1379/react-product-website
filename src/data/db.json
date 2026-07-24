@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Aurora Desk Lamp",
+      "price": 89.0,
+      "category": "Lighting",
+      "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=600&q=80",
+      "description": "A warm, dimmable LED lamp with a brushed-brass arm. Built for late nights and long reads."
+    },
+    {
+      "id": "2",
+      "name": "Meridian Wall Clock",
+      "price": 54.5,
+      "category": "Decor",
+      "image": "https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=600&q=80",
+      "description": "Silent-sweep minimalist clock with a pale-oak face and matte-black hands."
+    },
+    {
+      "id": "3",
+      "name": "Terra Ceramic Planter",
+      "price": 32.0,
+      "category": "Decor",
+      "image": "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600&q=80",
+      "description": "Hand-thrown stoneware planter with a reactive glaze. No two are exactly alike."
+    },
+    {
+      "id": "4",
+      "name": "Nimbus Lounge Chair",
+      "price": 420.0,
+      "category": "Furniture",
+      "image": "https://images.unsplash.com/photo-1519947486511-46149fa0a254?w=600&q=80",
+      "description": "Low-slung oak frame with a boucle seat. The kind of chair you sink into and forget the time."
+    }
+  ]
+}
