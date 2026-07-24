@@ -66,12 +66,12 @@ export function ProductProvider({ children }) {
 
   // Deletes product
   function deleteProduct(id) {
-    fetch(`${database_file}/${id}`, { method: "DELETE" }
-    .then((response)=>{
+    fetch(`${database_file}/${id}`, { method: "DELETE" })
+      .then((response) => {
         if (!response.ok) throw new Error("Could not delete product.");
-        setProducts(products.filter((p) => p.id !== id))
-    })
-  )};
+        setProducts((prev) => prev.filter((p) => p.id !== id));
+      });
+  }
 
   const value = {
     products,
